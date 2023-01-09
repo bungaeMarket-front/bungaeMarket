@@ -22,7 +22,7 @@ body, html {
 }
 #wrapper {
     width: 640px;
-    margin: 80px auto;
+    margin: 80px auto 0;
     box-sizing: border-box;
 }
 
@@ -41,9 +41,13 @@ header > div {
     margin: 0 auto;
     background-color: white;
 }
+header > div > a {
+    margin-left: 10px;
+}
 header > div > a > i {
     font-size: 17px;
     color: black;
+    
 }
 header > div > div {
     display: inline-block;
