@@ -1,3 +1,6 @@
+a:active, a:hover, a:visited {
+    color: rgb(33, 33, 33);
+}
 /*정산버튼*/
 .account_show_area{
     position: relative;
