@@ -49,6 +49,9 @@ div[class^="modal_"] .btn_area {
     display: flex;
     line-height: 1;
 }
+div[class^="modal_"] .btn_area a:hover {
+    color: #fff;
+}
 .btn_no {
     margin-right: 0.5rem;
     outline: none;
