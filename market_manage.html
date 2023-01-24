@@ -19,10 +19,13 @@
 
     <!--CSS-->
     <link rel="stylesheet" href="css/market/market_manage.css">
+    <link rel="stylesheet" href="css/market/join.css">
+
     <!-- 햄버거 메뉴 호버시 -->
     <script src="js/market/jquery-3.6.0.min.js"></script>
     <script src="js/market/menu_hover.js"></script>
-
+    <script src="js/market/login_modal.js"></script>
+    <script src="js/market/market_manage.js"></script>
 </head>
 <body>
     <div id="wrapper">
@@ -43,7 +46,7 @@
                                 <div class="col-4">
                                     <div class="row justify-content-end top_header_login">
                                         <div class="col-4">
-                                            <a href="#">
+                                            <a href="#" class="btn_map_close">
                                                 로그인/회원가입
                                             </a>
                                         </div>
@@ -76,13 +79,13 @@
                             </div>
                         </div>
                         <div class="col-1 b_h_left_menu">
-                            <a href="#">
+                            <a href="goods_selling_form.html">
                                 <img src="images/market/sell.png" alt="판매하기">
                                 판매하기
                             </a>
                         </div>
                         <div class="col-1 b_h_left_menu store">
-                            <a href="#">
+                            <a href="market_my_store.html">
                                 <img src="images/market/my_store.png" alt="내상점">
                                 내상점
                             </a>
@@ -110,18 +113,18 @@
                         <div id="test_area">
                             <ul id="test_cates">
                                 <h2>전체 카테고리<span> ></span></h2>
-                                <li id="clothes"><a href="#">의류</a></li>
-                                <li id="acc"><a href="#">악세서리</a></li>
+                                <li id="clothes"><a href="market_category_list.html">의류</a></li>
+                                <li id="acc"><a href="market_category_list.html">악세서리</a></li>
                             </ul>
                             <ul id="test_clos">
                                 <h3>의류</h3>
-                                <li><a href="#">남성의류</a></li>
-                                <li><a href="#">여성의류</a></li>
+                                <li><a href="market_category_list.html">남성의류</a></li>
+                                <li><a href="market_category_list.html">여성의류</a></li>
                             </ul>
                             <ul id="test_accs">
                                 <h3>악세서리</h3>
-                                <li><a href="#">시계/쥬얼리</a></li>
-                                <li><a href="#">패션 악세서리</a></li>
+                                <li><a href="market_category_list.html">시계/쥬얼리</a></li>
+                                <li><a href="market_category_list.html">패션 악세서리</a></li>
                             </ul>
                         </div>
                         <!-- // 메뉴 호버 -->
@@ -156,37 +159,39 @@
             </div>
         </div>
         <!-- // header 영역 -->
-        <!--삭제 제외 다른 상태 변경 후 확인 알림-->
-        <div class="ok_modal_area hidden">
-            <div class="ok_modal_bg bg"></div>
-            <div class="ok_modal">
-                <p>상품 상태가 변경되었습니다.</p>
-                <button type="button">확인</button>
-            </div>
-        </div>
-        <!--거래 이력 있으면 밑에 알림-->
-        <div class="delete_history_yes_modal_area hidden">
-            <div class="delete_modal_bg bg"></div>
-            <div class="delete_history_yes_modal">
-                <p>거래를 시도했던 이력이 있는 상품입니다. <br>정말 삭제하시겠습니까?</p>
-                <p>
-                    <button type="button" class="cancle">취소</button>
-                    <a href="삭제">확인</a>
-                </p>
-            </div>
-        </div>
-        <!--거래 이력 없으면 밑에 알림-->
-        <div class="delete_history_no_modal_area hidden">
-            <div class="delete_modal_bg bg"></div>
-            <div class="delete_history_no_modal">
-                <p>상품을 삭제하시겠습니까?</p>
-                <p>
-                    <button type="button" class="cancle">취소</button>
-                    <a href="삭제">확인</a>
-                </p>
-            </div>
-        </div>
 
+        <!--로그인/회원가입 모달창-->
+        <div class="join_modal_wrap hidden">
+            <div class="join_bg bg"></div>
+            <div class="join_content">
+                <button class="btn_join_close">
+                    <img src="images/market/thunder_join_close.png" alt="번개장터 로그인 창 닫기 버튼" width="24px" height="24px">
+                </button>
+                <div class="join_main">
+                    <img src="images/market/app.png" alt="번개장터 앱 로고">
+                    <p>번개장터로 중고 거래 시작하기</p>
+                    <p>간편하게 가입하고 상품을 확인하세요</p>
+                    <div class="join_button_area">
+                        <button class="join_kakao">
+                            <div class="join_kakao_logo"></div>
+                            카카오로 이용하기
+                        </button>
+                        <button class="join_naver">
+                            <div class="join_naver_logo"></div>
+                            네이버로 이용하기
+                        </button>
+                        <button class="join_google">
+                            <div class="join_google_logo"></div>
+                            구글로 이용하기
+                        </button>
+                    </div>
+                    <div class="join_footer">
+                        도움이 필요하시면 <span class="join_footer_email">이메일</span> 또는 고객센터 <span class="join_footer_cs">1670-2910</span>로 문의 부탁드립니다.<br>
+                        고객센터 운영시간: 09~18시 (점심시간 12~13시, 주말/공휴일 제외)
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- main_content 영역 -->
         <div id="main_content">
@@ -204,18 +209,22 @@
                     <button type="button"><i class="fas fa-search"></i></button>
                 </form>
                 <ul class="all_goods_show_num">
-                    <li class="all_goods_num"><span>10개씩</span><span class="gray_arrow"></span></li>
-                    <li class="option"><a href="#">10개씩</a></li>
-                    <li class="option"><a href="#">20개씩</a></li>
-                    <li class="option"><a href="#">50개씩</a></li>
-                    <li class="option"><a href="#">100개씩</a></li>
+                    <li class="show all_goods_num"><span>10개씩</span><span class="gray_arrow"></span></li>
+                    <div>
+                        <li class="option">10개씩</li>
+                        <li class="option">20개씩</li>
+                        <li class="option">50개씩</li>
+                        <li class="option">100개씩</li>
+                    </div>    
                 </ul>
                 <ul class="all_goods_show_status">
-                    <li class="all_goods_status"><span>전체</span><span class="gray_arrow"></span></li>
-                    <li class="option"><a href="#">전체</a></li>
-                    <li class="option"><a href="#">판매 중</a></li>
-                    <li class="option"><a href="#">예약 중</a></li>
-                    <li class="option"><a href="#">판매완료</a></li>
+                    <li class="show all_goods_status"><span>전체</span><span class="gray_arrow"></span></li>
+                    <div>
+                        <li class="option">전체</li>
+                        <li class="option">판매 중</li>
+                        <li class="option">예약 중</li>
+                        <li class="option">판매완료</li>
+                    </div>    
                 </ul>
             </section>
             <section class="goods_manage_area">
@@ -237,12 +246,14 @@
                         <tr>
                             <td><img src="images/goods_ex.jpg" alt="상품 사진"></td>
                             <td>
-                                <ul>
-                                    <li class="show">판매중<span class="gray_arrow"></span></li>
-                                    <li class="option"><a href="">판매 중</a></li>
-                                    <li class="option"><a href="">예약 중</a></li>
-                                    <li class="option"><button type="button">삭제</button></li>
-                                    <li class="option"><a href="">판매완료</a></li>
+                                <ul class="goods_status_show">
+                                    <li class="show"><span>판매중</span><span class="gray_arrow"></span></li>
+                                    <div>
+                                        <li class="option">판매 중</li>
+                                        <li class="option">예약 중</li>
+                                        <li class="option">삭제</li>
+                                        <li class="option">판매완료</li>
+                                    </div>
                                 </ul>
                             </td>
                             <td><a href="goods_product_detail.html">상품명</a></td>
