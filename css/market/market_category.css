@@ -7,8 +7,8 @@
 
 /* 카테고리 */
 #category {
-    font-size: 12px;
-    overflow: hidden;
+    height: 40px;
+    font-size: 13px;
 }
 #category::after {
     clear: both;
@@ -40,7 +40,6 @@
 #category_left {
     width: 600px;
 }
-
 #home {
     float: left;
 }
@@ -54,10 +53,13 @@
 .hidden_menu {
     border: 1px solid rgb(238, 238, 238);
     width: 140px;
+    padding: 0;
+    margin: 0;
     padding-left: 10px;
     margin-left: -11px;
     margin-top: -2px;
     display: none;
+    background-color: #fff; 
 }
 #entire {
     float: left;
@@ -101,12 +103,90 @@
 .category_box {
     width: 203.8px;
     background-color: #fff;
-    padding: 10px 20px;
+    padding: 13px 20px;
     margin: 0px 1px 1px 0px;
     box-shadow: rgb(238 238 238) 0px 1px 1px 0px;
 }
 .category_box > a {
+    font-size: 12px;
     font-weight: 500;
+    color: #121212;
+}
+
+/*상품 영역*/
+.main_goods {
+    padding: 3.5rem 0px 1.5rem;
+}
+.goods_wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+.goods_wrap > .goods {
+    display: inline-block;
+    width: 196px;
+    margin-right: 11px;
+    margin-bottom: 11px;
+    border: 1px solid #eee;
+    background-color: #fff;
+}
+.goods_wrap > .goods:nth-child(5n) {
+    margin-right: 0;
+}
+.goods_image {
+    position: relative;
+    z-index: 1;
+    width: 194px;
+    height: 194px;
+}
+.goods_image > img:nth-child(2) {
+    position: absolute;
+    z-index: 10;
+    bottom: 10px;
+    left: 10px;
+}
+.goods_image > span {
+    position: absolute;
+    z-index: 10;
+    bottom: 10px;
+    left: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    padding: 2px 3px 3px;
+    margin: 0;
+    line-height: 1;
+    letter-spacing: -0.5px;
+}
+.goods_image > span:nth-child(3) {
+    left: 50px;
+}
+.goods_info {
+    padding: 15px 10px;
+    height: 80px;
+    font-size: 14px;
+    box-sizing: border-box;
+    line-height: 1;
+}
+.goods_info > .goods_title {
+    padding-bottom: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #121212;
+}
+.goods_price_date {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 20px;
+}
+.goods_price {
+    font-weight: 600;
+    font-size: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
     color: #121212;
 }
 
